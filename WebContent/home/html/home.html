@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+		<link href='http://fonts.googleapis.com/css?family=Lora:400,700|Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+	
+		<link rel="stylesheet" href="home/css/reset.css"> <!-- CSS reset -->
+		<link rel="stylesheet" href="home/css/style.css"> <!-- Resource style -->
+		<script src="home/js/modernizr.js"></script>
+		<script src="home/js/jquery-2.1.1.js"></script>
+		<script src="home/js/main.js"></script>  
+	  	
+		<title>Administration</title>
+	</head>
+	<body>
+		<a href="home/#cd-nav" class="cd-nav-trigger">
+			Menu<span><!-- used to create the menu icon --></span>
+		</a> <!-- .cd-nav-trigger -->
+		
+		<main>
+			<section class="cd-section index cd-selected">
+				<header>
+					<div class="cd-title">
+						<h2>Espace Administration</h2>
+					</div> <!-- .cd-title -->
+				</header>
+	
+				
+			</section> <!-- .cd-section -->
+		</main>
+		
+		<nav class="cd-nav-container" id="cd-nav">
+			<header>
+				<h3></h3>
+				<div align="right"></div>
+			</header>
+	
+			<ul class="cd-nav">
+				<li class="cd-selected" data-menu="index">
+					<a href="/stock_info/CategorieServlet?action=get">
+						<em>Categorie</em>
+					</a>
+				</li>
+	
+				<li data-menu="projects">
+					<a href="/stock_info/MaterielServlet">
+						<em>Materiel</em>
+					</a>
+				</li>
+	
+				<li data-menu="about">
+					<a href="/stock_info/FournisseurServlet">
+						<em>Fournisseur</em>
+					</a>
+				</li>
+	
+				<li data-menu="services">
+					<a href="/stock_info/ClientServlet">					
+						<em>Client</em>
+					</a>
+				</li>
+	
+				<li data-menu="careers">
+					<a href="/stock_info/CommandeEntreeServlet">
+						<em>Commande Entrée</em>
+					</a>
+				</li>
+				
+				<li data-menu="careers">
+					<a href="/stock_info/CommandeSortieServlet">
+						<em>Commande Sortie</em>
+					</a>
+				</li>
+				
+				<li data-menu="contact">
+					<a href="/stock_info/LogoutServlet">
+						<em>Log out!</em>
+					</a>
+				</li>
+			</ul> <!-- .cd-3d-nav -->
+		</nav>
+	
+		<div class="cd-overlay"><!-- shadow layer visible when navigation is visible --></div>
+		
+	
+	</body>
+</html>
