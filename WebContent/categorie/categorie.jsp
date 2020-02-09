@@ -13,7 +13,7 @@
             <header>
                 <nav class="navbar navbar-expand-md navbar-dark" style="background-color: tomato">
                     <div>
-                        <a href="<%=request.getContextPath()%>/list" class="navbar-brand"> Categories </a>
+                        <a href="<%=request.getContextPath()%>/HomeServlet" class="navbar-brand"> Home </a>
                     </div>
                 </nav>
             </header>

@@ -3,22 +3,40 @@ package com.stock.model;
 public class Materiel {
 
 	private int idMateriel;
-	private int idCategorie;
+	private Categorie categorie;
 	private String nomMateriel;
 	private int quantiteStock;
 	private double prixUnitaire;
 	
+	public Materiel(Categorie categorie, String nomMateriel, int quantiteStock, double prixUnitaire) {
+		super();
+		this.categorie = categorie;
+		this.nomMateriel = nomMateriel;
+		this.quantiteStock = quantiteStock;
+		this.prixUnitaire = prixUnitaire;
+	}
+	
+	public Materiel(int idMateriel, Categorie categorie, String nomMateriel, int quantiteStock, double prixUnitaire) {
+		super();
+		this.idMateriel = idMateriel;
+		this.categorie = categorie;
+		this.nomMateriel = nomMateriel;
+		this.quantiteStock = quantiteStock;
+		this.prixUnitaire = prixUnitaire;
+	}
+
+	public Categorie getCategorie() {
+		return categorie;
+	}
+	public void setCategorie(Categorie categorie) {
+		this.categorie = categorie;
+	}
+
 	public int getIdMateriel() {
 		return idMateriel;
 	}
 	public void setIdMateriel(int idMateriel) {
 		this.idMateriel = idMateriel;
-	}
-	public int getIdCategorie() {
-		return idCategorie;
-	}
-	public void setIdCategorie(int idCategorie) {
-		this.idCategorie = idCategorie;
 	}
 	public String getNomMateriel() {
 		return nomMateriel;

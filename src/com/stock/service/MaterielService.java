@@ -1,42 +1,36 @@
 package com.stock.service;
 
-public class MaterielService {
+import java.util.List;
 
-	private int idMateriel;
-	private int idCategorie;
-	private String nomMateriel;
-	private int quantiteStock;
-	private double prixUnitaire;
+import com.stock.dao.MaterielDAO;
+import com.stock.model.Materiel;
+
+public class MaterielService {
 	
-	public int getIdMateriel() {
-		return idMateriel;
+	private MaterielDAO materielDAO;
+
+	public MaterielService() {
+		this.materielDAO = new MaterielDAO();
 	}
-	public void setIdMateriel(int idMateriel) {
-		this.idMateriel = idMateriel;
+
+	public List<Materiel> getAllMateriels() {
+		return materielDAO.selectAllMateriels();
 	}
-	public int getIdCategorie() {
-		return idCategorie;
+
+	public void removeMateriel(int idMateriel) {
+		materielDAO.deleteMateriel(idMateriel);
 	}
-	public void setIdCategorie(int idCategorie) {
-		this.idCategorie = idCategorie;
+
+	public void addMateriel(Materiel materiel) {
+		materielDAO.insertMateriel(materiel);
 	}
-	public String getNomMateriel() {
-		return nomMateriel;
+
+	public void editMateriel(Materiel materiel) {
+		materielDAO.updateMateriel(materiel);
 	}
-	public void setNomMateriel(String nomMateriel) {
-		this.nomMateriel = nomMateriel;
-	}
-	public int getQuantiteStock() {
-		return quantiteStock;
-	}
-	public void setQuantiteStock(int quantiteStock) {
-		this.quantiteStock = quantiteStock;
-	}
-	public double getPrixUnitaire() {
-		return prixUnitaire;
-	}
-	public void setPrixUnitaire(double prixUnitaire) {
-		this.prixUnitaire = prixUnitaire;
+
+	public Materiel getMaterielById(int idMateriel) {
+		return materielDAO.selectMaterielById(idMateriel);
 	}
 	
 }
