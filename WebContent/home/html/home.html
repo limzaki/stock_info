@@ -1,89 +1,102 @@
-<!doctype html>
-<html lang="en" class="no-js">
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-	
-		<link href='http://fonts.googleapis.com/css?family=Lora:400,700|Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
-	
-		<link rel="stylesheet" href="home/css/reset.css"> <!-- CSS reset -->
-		<link rel="stylesheet" href="home/css/style.css"> <!-- Resource style -->
-		<script src="home/js/modernizr.js"></script>
-		<script src="home/js/jquery-2.1.1.js"></script>
-		<script src="home/js/main.js"></script>  
-	  	
-		<title>Administration</title>
-	</head>
-	<body>
-		<a href="home/#cd-nav" class="cd-nav-trigger">
-			Menu<span><!-- used to create the menu icon --></span>
-		</a> <!-- .cd-nav-trigger -->
-		
-		<main>
-			<section class="cd-section index cd-selected">
-				<header>
-					<div class="cd-title">
-						<h2>Espace Administration</h2>
-					</div> <!-- .cd-title -->
-				</header>
-	
-				
-			</section> <!-- .cd-section -->
-		</main>
-		
-		<nav class="cd-nav-container" id="cd-nav">
-			<header>
-				<h3></h3>
-				<div align="right"></div>
-			</header>
-	
-			<ul class="cd-nav">
-				<li class="cd-selected" data-menu="index">
-					<a href="/stock_info/CategorieServlet?action=get">
-						<em>Categorie</em>
-					</a>
-				</li>
-	
-				<li data-menu="projects">
-					<a href="/stock_info/MaterielServlet?action=get">
-						<em>Materiel</em>
-					</a>
-				</li>
-	
-				<li data-menu="about">
-					<a href="/stock_info/FournisseurServlet?action=get">
-						<em>Fournisseur</em>
-					</a>
-				</li>
-	
-				<li data-menu="services">
-					<a href="/stock_info/ClientServlet?action=get">					
-						<em>Client</em>
-					</a>
-				</li>
-	
-				<li data-menu="careers">
-					<a href="/stock_info/CommandeEntreeServlet?action=get">
-						<em>Commande Entrée</em>
-					</a>
-				</li>
-				
-				<li data-menu="careers">
-					<a href="/stock_info/CommandeSortieServlet?action=get">
-						<em>Commande Sortie</em>
-					</a>
-				</li>
-				
-				<li data-menu="contact">
-					<a href="/stock_info/LogoutServlet?action=get">
-						<em>Log out!</em>
-					</a>
-				</li>
-			</ul> <!-- .cd-3d-nav -->
-		</nav>
-	
-		<div class="cd-overlay"><!-- shadow layer visible when navigation is visible --></div>
-		
-	
-	</body>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="home/css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+	<link rel="stylesheet" href="home/css/font-awesome/css/font-awesome.min.css">
+  </head>
+  <body>
+    <div class="services-section">
+      <div class="inner-width">
+        <h1 class="section-title">Menu</h1>
+        <div class="border"></div>
+        <div class="services-container">
+
+          <div class="service-box">
+            <div class="service-icon">
+              <a href="/stock_info/CategorieServlet?action=get">
+              	<i class="fa fa-list-alt  fa-fw"></i>
+              </a>
+            </div>
+            <div class="service-title">Categorie</div>
+             <div class="service-desc">
+              
+            </div>
+          </div>
+
+          <div class="service-box">
+            <div class="service-icon">
+              <a href="/stock_info/MaterielServlet?action=get">
+              	<i class="fa fa-desktop"></i>
+              </a>
+            </div>
+            <div class="service-title">Materiel</div>
+            <div class="service-desc">
+              
+            </div>
+          </div>
+
+          <div class="service-box">
+            <div class="service-icon">		  
+              <a href="/stock_info/FournisseurServlet?action=get">
+              	<i class="fa fa-truck"></i>
+              </a>
+            </div>
+            <div class="service-title">Fournisseur</div>
+            <div class="service-desc">
+              
+            </div>
+          </div>
+
+          <div class="service-box">
+            <div class="service-icon">  
+              <a href="/stock_info/ClientServlet?action=get">
+              	<i class="fa fa-user"></i>		
+              </a>			
+            </div>
+            <div class="service-title">Client</div>
+            <div class="service-desc">
+              
+            </div>
+          </div>
+
+          <div class="service-box">
+            <div class="service-icon">
+              <a href="/stock_info/CommandeEntreeServlet?action=get">
+              	<i class="fa  fa-shopping-cart  fa-fw"></i>
+              </a>
+            </div>
+            <div class="service-title">Commande <br> Entree</div>
+            <div class="service-desc">
+            </div>
+          </div>
+
+          <div class="service-box">
+            <div class="service-icon">
+              <a href="/stock_info/CommandeSortieServlet?action=get">
+              	<i class="fa fa-mail-forward fa-fw"></i>
+              </a>
+            </div>
+            <div class="service-title">Commande <br> Sortie</div>
+            <div class="service-desc">
+            </div>
+          </div>
+		  
+		  <div class="service-box">
+            <div class="service-icon">
+              <a href="/stock_info/LogoutServlet?action=get">
+              	<i class="fa fa-sign-out"></i>
+              </a>
+            </div>
+            <div class="service-title">Log out</div>
+            <div class="service-desc">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>

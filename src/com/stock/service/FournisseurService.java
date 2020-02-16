@@ -1,35 +1,36 @@
 package com.stock.service;
 
-public class FournisseurService {
+import java.util.List;
 
-	private int idFournisseur;
-	private String nom;
-	private String telephone;
-	private String email;
+import com.stock.dao.FournisseurDAO;
+import com.stock.model.Fournisseur;
+
+public class FournisseurService {
 	
-	public int getIdFournisseur() {
-		return idFournisseur;
+	private FournisseurDAO fournisseurDAO;
+
+	public FournisseurService() {
+		this.fournisseurDAO = new FournisseurDAO();
 	}
-	public void setIdFournisseur(int idFournisseur) {
-		this.idFournisseur = idFournisseur;
+
+	public List<Fournisseur> getAllFournisseurs() {
+		return fournisseurDAO.selectAllFournisseurs();
 	}
-	public String getNom() {
-		return nom;
+
+	public void removeFournisseur(int idFournisseur) {
+		fournisseurDAO.deleteFournisseur(idFournisseur);
 	}
-	public void setNom(String nom) {
-		this.nom = nom;
+
+	public void addFournisseur(Fournisseur fournisseur) {
+		fournisseurDAO.insertFournisseur(fournisseur);
 	}
-	public String getTelephone() {
-		return telephone;
+
+	public void editFournisseur(Fournisseur fournisseur) {
+		fournisseurDAO.updateFournisseur(fournisseur);
 	}
-	public void setTelephone(String telephone) {
-		this.telephone = telephone;
-	}
-	public String getEmail() {
-		return email;
-	}
-	public void setEmail(String email) {
-		this.email = email;
+
+	public Fournisseur getFournisseurById(int idFournisseur) {
+		return fournisseurDAO.selectFournisseurById(idFournisseur);
 	}
 	
 }

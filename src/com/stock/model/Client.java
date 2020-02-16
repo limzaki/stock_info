@@ -7,6 +7,19 @@ public class Client {
 	private String telephone;
 	private String email;
 	
+	public Client(String nomComplet, String telephone, String email) {
+		super();
+		this.nomComplet = nomComplet;
+		this.telephone = telephone;
+		this.email = email;
+	}
+	public Client(int idClient, String nomComplet, String telephone, String email) {
+		super();
+		this.idClient = idClient;
+		this.nomComplet = nomComplet;
+		this.telephone = telephone;
+		this.email = email;
+	}
 	public int getIdClient() {
 		return idClient;
 	}
