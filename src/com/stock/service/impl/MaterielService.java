@@ -1,13 +1,15 @@
-package com.stock.service;
+package com.stock.service.impl;
 
 import java.util.List;
 
-import com.stock.dao.MaterielDAO;
+import com.stock.dao.IMaterielDAO;
+import com.stock.dao.impl.MaterielDAO;
 import com.stock.model.Materiel;
+import com.stock.service.IMaterielService;
 
-public class MaterielService {
+public class MaterielService implements IMaterielService{
 	
-	private MaterielDAO materielDAO;
+	private IMaterielDAO materielDAO;
 
 	public MaterielService() {
 		this.materielDAO = new MaterielDAO();

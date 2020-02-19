@@ -1,13 +1,15 @@
-package com.stock.service;
+package com.stock.service.impl;
 
 import java.util.List;
 
-import com.stock.dao.CategorieDAO;
+import com.stock.dao.ICategorieDAO;
+import com.stock.dao.impl.CategorieDAO;
 import com.stock.model.Categorie;
+import com.stock.service.ICategorieService;
 
-public class CategorieService {
+public class CategorieService implements ICategorieService {
 	
-	private CategorieDAO categorieDAO;
+	private ICategorieDAO categorieDAO;
 
 	public CategorieService() {
 		this.categorieDAO = new CategorieDAO();

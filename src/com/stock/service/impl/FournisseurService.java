@@ -1,13 +1,15 @@
-package com.stock.service;
+package com.stock.service.impl;
 
 import java.util.List;
 
-import com.stock.dao.FournisseurDAO;
+import com.stock.dao.IFournisseurDAO;
+import com.stock.dao.impl.FournisseurDAO;
 import com.stock.model.Fournisseur;
+import com.stock.service.IFournisseurService;
 
-public class FournisseurService {
+public class FournisseurService implements IFournisseurService{
 	
-	private FournisseurDAO fournisseurDAO;
+	private IFournisseurDAO fournisseurDAO;
 
 	public FournisseurService() {
 		this.fournisseurDAO = new FournisseurDAO();

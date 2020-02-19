@@ -7,6 +7,7 @@ public class CommandeSortie {
 	private int idCommandeSortie;
 	private int idClient;
 	private Date dateCommandeSortie;
+	private double montant;
 	
 	public int getIdCommandeSortie() {
 		return idCommandeSortie;
@@ -25,6 +26,12 @@ public class CommandeSortie {
 	}
 	public void setDateCommandeSortie(Date dateCommandeSortie) {
 		this.dateCommandeSortie = dateCommandeSortie;
+	}
+	public double getMontant() {
+		return montant;
+	}
+	public void setMontant(double montant) {
+		this.montant = montant;
 	}
 	
 }

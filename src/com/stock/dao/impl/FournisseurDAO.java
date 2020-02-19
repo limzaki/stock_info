@@ -1,4 +1,4 @@
-package com.stock.dao;
+package com.stock.dao.impl;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -7,10 +7,11 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.stock.dao.IFournisseurDAO;
 import com.stock.database.DBConnection;
 import com.stock.model.Fournisseur;
 
-public class FournisseurDAO {
+public class FournisseurDAO implements IFournisseurDAO{
 	
 	private static final String SELECT_ALL_FOURNISSEURS = "SELECT * FROM fournisseur";
 	private static final String SELECT_FOURNISSEUR_BY_ID = "SELECT * FROM fournisseur WHERE id_fournisseur = ?";

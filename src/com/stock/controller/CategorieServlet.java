@@ -11,7 +11,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.stock.model.Categorie;
-import com.stock.service.CategorieService;
+import com.stock.service.ICategorieService;
+import com.stock.service.impl.CategorieService;
 
 @WebServlet("/CategorieServlet")
 public class CategorieServlet extends HttpServlet {
@@ -20,7 +21,7 @@ public class CategorieServlet extends HttpServlet {
 	private static final String CATEGORIE_PAGE = "categorie/categorie.jsp";
 	private static final String CATEGORIE_FORM = "categorie/categorieForm.jsp";
 
-	private CategorieService categorieService;
+	private ICategorieService categorieService;
 
 	@Override
 	public void init() throws ServletException {

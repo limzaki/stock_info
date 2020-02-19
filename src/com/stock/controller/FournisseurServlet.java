@@ -11,7 +11,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.stock.model.Fournisseur;
-import com.stock.service.FournisseurService;
+import com.stock.service.IFournisseurService;
+import com.stock.service.impl.FournisseurService;
 
 @WebServlet("/FournisseurServlet")
 public class FournisseurServlet extends HttpServlet {
@@ -20,7 +21,7 @@ public class FournisseurServlet extends HttpServlet {
 	private static final String FOURNISSEUR_PAGE = "fournisseur/fournisseur.jsp";
 	private static final String FOURNISSEUR_FORM = "fournisseur/fournisseurForm.jsp";
 
-	private FournisseurService fournisseurService;
+	private IFournisseurService fournisseurService;
 
 	@Override
 	public void init() throws ServletException {

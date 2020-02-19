@@ -1,4 +1,4 @@
-package com.stock.dao;
+package com.stock.dao.impl;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -7,10 +7,11 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.stock.dao.IMaterielDAO;
 import com.stock.database.DBConnection;
 import com.stock.model.Materiel;
 
-public class MaterielDAO {
+public class MaterielDAO implements IMaterielDAO{
 
 	private static final String SELECT_ALL_MATERIELS = "SELECT * FROM materiel";
 	private static final String SELECT_MATERIEL_BY_ID = "SELECT * FROM materiel WHERE id_materiel = ?";

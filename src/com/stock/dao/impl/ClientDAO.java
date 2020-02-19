@@ -1,4 +1,4 @@
-package com.stock.dao;
+package com.stock.dao.impl;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -7,10 +7,11 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.stock.dao.IClientDAO;
 import com.stock.database.DBConnection;
 import com.stock.model.Client;
 
-public class ClientDAO {
+public class ClientDAO implements IClientDAO{
 	
 	private static final String SELECT_ALL_CLIENTS = "SELECT * FROM client";
 	private static final String SELECT_CLIENT_BY_ID = "SELECT * FROM client WHERE id_client = ?";

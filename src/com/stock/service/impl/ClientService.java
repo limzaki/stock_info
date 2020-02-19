@@ -1,13 +1,15 @@
-package com.stock.service;
+package com.stock.service.impl;
 
 import java.util.List;
 
-import com.stock.dao.ClientDAO;
+import com.stock.dao.IClientDAO;
+import com.stock.dao.impl.ClientDAO;
 import com.stock.model.Client;
+import com.stock.service.IClientService;
 
-public class ClientService {
+public class ClientService implements IClientService{
 	
-	private ClientDAO clientDAO;
+	private IClientDAO clientDAO;
 
 	public ClientService() {
 		this.clientDAO = new ClientDAO();

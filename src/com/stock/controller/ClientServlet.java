@@ -11,7 +11,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.stock.model.Client;
-import com.stock.service.ClientService;
+import com.stock.service.IClientService;
+import com.stock.service.impl.ClientService;
 
 @WebServlet("/ClientServlet")
 public class ClientServlet extends HttpServlet {
@@ -20,7 +21,7 @@ public class ClientServlet extends HttpServlet {
 	private static final String CLIENT_PAGE = "client/client.jsp";
 	private static final String CLIENT_FORM = "client/clientForm.jsp";
 
-	private ClientService clientService;
+	private IClientService clientService;
 
 	@Override
 	public void init() throws ServletException {

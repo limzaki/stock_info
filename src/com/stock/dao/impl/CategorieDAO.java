@@ -1,4 +1,4 @@
-package com.stock.dao;
+package com.stock.dao.impl;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -7,10 +7,11 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.stock.dao.ICategorieDAO;
 import com.stock.database.DBConnection;
 import com.stock.model.Categorie;
 
-public class CategorieDAO {
+public class CategorieDAO implements ICategorieDAO{
 	
 	private static final String SELECT_ALL_CATEGORIES = "SELECT * FROM categorie";
 	private static final String SELECT_CATEGORIE_BY_ID = "SELECT * FROM categorie WHERE id_categorie = ?";

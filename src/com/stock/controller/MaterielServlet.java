@@ -11,8 +11,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.stock.model.Materiel;
-import com.stock.service.CategorieService;
-import com.stock.service.MaterielService;
+import com.stock.service.ICategorieService;
+import com.stock.service.IMaterielService;
+import com.stock.service.impl.CategorieService;
+import com.stock.service.impl.MaterielService;
 
 @WebServlet("/MaterielServlet")
 public class MaterielServlet extends HttpServlet {
@@ -21,9 +23,9 @@ public class MaterielServlet extends HttpServlet {
 	private static final String MATERIEL_PAGE = "materiel/materiel.jsp";
 	private static final String MATERIEL_FORM = "materiel/materielForm.jsp";
 
-	private MaterielService materielService;
+	private IMaterielService materielService;
 
-	private CategorieService categorieService;
+	private ICategorieService categorieService;
 	
 	@Override
 	public void init() throws ServletException {
