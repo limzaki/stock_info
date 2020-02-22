@@ -6,22 +6,28 @@ import java.util.List;
 public class CommandeEntree {
 	
 	private int idCommandeEntree;
-	private int Fournisseur;
+	private Fournisseur fournisseur;
 	private Date dateCommandeEntree;
 	private double montant;
-	private List<LigneCommandeEntree> lignesCommandeEntree;
 	
+	public CommandeEntree(int idCommandeEntree, Fournisseur fournisseur, Date dateCommandeEntree, double montant) {
+		super();
+		this.idCommandeEntree = idCommandeEntree;
+		this.fournisseur = fournisseur;
+		this.dateCommandeEntree = dateCommandeEntree;
+		this.montant = montant;
+	}
 	public int getIdCommandeEntree() {
 		return idCommandeEntree;
 	}
 	public void setIdCommandeEntree(int idCommandeEntree) {
 		this.idCommandeEntree = idCommandeEntree;
 	}
-	public int getFournisseur() {
-		return Fournisseur;
+	public Fournisseur getFournisseur() {
+		return fournisseur;
 	}
-	public void setFournisseur(int fournisseur) {
-		Fournisseur = fournisseur;
+	public void setFournisseur(Fournisseur fournisseur) {
+		this.fournisseur = fournisseur;
 	}
 	public Date getDateCommandeEntree() {
 		return dateCommandeEntree;
@@ -35,11 +41,5 @@ public class CommandeEntree {
 	public void setMontant(double montant) {
 		this.montant = montant;
 	}
-	public List<LigneCommandeEntree> getLignesCommandeEntree() {
-		return lignesCommandeEntree;
-	}
-	public void setLignesCommandeEntree(List<LigneCommandeEntree> lignesCommandeEntree) {
-		this.lignesCommandeEntree = lignesCommandeEntree;
-	}
-	
+
 }

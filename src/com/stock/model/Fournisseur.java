@@ -7,6 +7,10 @@ public class Fournisseur {
 	private String telephone;
 	private String email;
 	
+	public Fournisseur(int idFournisseur) {
+		super();
+		this.idFournisseur = idFournisseur;
+	}
 	public Fournisseur(String nom, String telephone, String email) {
 		super();
 		this.nom = nom;
