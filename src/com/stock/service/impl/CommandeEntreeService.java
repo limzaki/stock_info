@@ -8,9 +8,9 @@ import com.stock.model.CommandeEntree;
 import com.stock.service.ICommandeEntreeService;
 
 public class CommandeEntreeService implements ICommandeEntreeService{
-	
+
 	private ICommandeEntreeDAO commandeEntreeDAO;
-	
+
 	public CommandeEntreeService() {
 		this.commandeEntreeDAO = new CommandeEntreeDAO();
 	}
@@ -23,11 +23,19 @@ public class CommandeEntreeService implements ICommandeEntreeService{
 	@Override
 	public void addCommandeEntree(CommandeEntree commandeEntree) {
 		commandeEntreeDAO.insertCommandeEntree(commandeEntree);
-		
+
 	}
 
 	public CommandeEntree geCommandeEntreeById(int idCommandeEntree) {
 		return commandeEntreeDAO.selectCommandeEntreeById(idCommandeEntree);
 	}
 
+	public CommandeEntree getLastCommandeEntree() {
+		return commandeEntreeDAO.selectLastCommandeEntree();
+	}
+
+
+	public void setCommandeEntreeMontant(int idCommandeEntree, double montant) {
+		commandeEntreeDAO.updateCommandeEntreeMontant(idCommandeEntree, montant);
+	}
 }

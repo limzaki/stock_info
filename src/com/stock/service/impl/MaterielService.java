@@ -31,6 +31,10 @@ public class MaterielService implements IMaterielService{
 		materielDAO.updateMateriel(materiel);
 	}
 
+	public void editMaterielQuantiteStock(int idMateriel, int newQuantite) {
+		materielDAO.updateMaterielQuantiteStock(idMateriel, newQuantite);
+	}
+	
 	public Materiel getMaterielById(int idMateriel) {
 		return materielDAO.selectMaterielById(idMateriel);
 	}

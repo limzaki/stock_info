@@ -12,4 +12,8 @@ public interface ICommandeEntreeDAO {
 
 	CommandeEntree selectCommandeEntreeById(int idCommandeEntree);
 
+	CommandeEntree selectLastCommandeEntree();
+
+	void updateCommandeEntreeMontant(int idCommandeEntree, double montant);
+
 }

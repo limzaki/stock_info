@@ -18,7 +18,8 @@ public class MaterielDAO implements IMaterielDAO{
 	private static final String DELETE_MATERIEL = "DELETE FROM materiel WHERE id_materiel = ? ";
 	private static final String INSERT_MATERIEL = "INSERT INTO materiel(nom_materiel, quantite_stock, prix_unitaire, id_categorie) VALUES(?, ?, ?, ?)";
 	private static final String UPDATE_MATERIEL = "UPDATE materiel SET nom_materiel = ? , quantite_stock = ? , prix_unitaire = ? , id_categorie = ? WHERE id_materiel = ?";
-
+	private static final String UPDATE_MATERIEL_QUANTITE = "UPDATE materiel SET quantite_stock = ? WHERE id_materiel = ?";
+	
 	private final Connection connection = DBConnection.getConnection();
 	
 	private CategorieDAO categorieDAO;
@@ -88,6 +89,17 @@ public class MaterielDAO implements IMaterielDAO{
 			e.printStackTrace();
 		}
 	}
+	
+	public void updateMaterielQuantiteStock(int idMateriel, int newQuantite) {
+		try {
+			PreparedStatement preparedStatement = connection.prepareStatement(UPDATE_MATERIEL_QUANTITE);
+			preparedStatement.setInt(1, newQuantite);
+			preparedStatement.setInt(2, idMateriel);
+			preparedStatement.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
 
 	public Materiel selectMaterielById(int idMateriel) {
 		Materiel materiel = null;
@@ -97,7 +109,6 @@ public class MaterielDAO implements IMaterielDAO{
 			ResultSet resultSet = preparedStatement.executeQuery();
 
 			while(resultSet.next()) {
-				int id = resultSet.getInt(1);
 				String nomMateriel = resultSet.getString(2);
 				int quantiteStock = resultSet.getInt(3);
 				double prixUnitaire = resultSet.getDouble(4);

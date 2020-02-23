@@ -4,7 +4,7 @@
         <html>
 
         <head>
-            <title>CommandeEntree</title>
+            <title>LigneCommandeEntree</title>
             <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         </head>
 
@@ -23,40 +23,32 @@
                 <!-- <div class="alert alert-success" *ngIf='message'>{{message}}</div> -->
 
                 <div class="container">
-                    <h3 class="text-center">List Des CommandeEntrees</h3>
+                    <h3 class="text-center">Détails de la commande d'entrée</h3>
                     <hr>
                     <div class="container text-left">
 
-                        <a href="<%=request.getContextPath()%>/CommandeEntreeServlet?action=new" class="btn btn-success">Ajouter
-     Nouveau CommandeEntree</a>
                     </div>
                     <br>
                     <table class="table table-bordered">
                         <thead>
                             <tr>
-                                <th>ID</th>
-                                <th>Date</th>
-                                <th>Montant</th>
-                                <th>Fournisseur</th>
-                                <th>Action</th>
+                                <th>Materiel</th>
+                                <th>Prix</th>
+                                <th>quantite</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <c:forEach var="commandeEntree" items="${commandeEntrees}">
+                            <c:forEach var="ligneCommandeEntree" items="${ligneCommandeEntrees}">
                                 <tr>
                                     <td>
-                                        <c:out value="${commandeEntree.idCommandeEntree}" />
+                                        <c:out value="${ligneCommandeEntree.materiel.nomMateriel}" />
+                                    </td>
+									<td>
+                                        <c:out value="${ligneCommandeEntree.materiel.prixUnitaire} MAD" />
                                     </td>
                                     <td>
-                                        <c:out value="${commandeEntree.dateCommandeEntree}" />
+                                        <c:out value="${ligneCommandeEntree.quantite}" />
                                     </td>
-                                    <td>
-                                        <c:out value="${commandeEntree.montant}" />
-                                    </td>
-                                    <td>
-                                        <c:out value="${commandeEntree.fournisseur.nom}" />
-                                    </td>
-                                    <td><a href="CommandeEntreeServlet?action=modify&id=<c:out value='${commandeEntree.idCommandeEntree}' />">Modifier</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="<%=request.getContextPath()%>/CommandeEntreeServlet?action=delete&id=<c:out value='${commandeEntree.idCommandeEntree}' />">Supprimer</a></td>
                                 </tr>
                             </c:forEach>
                         </tbody>

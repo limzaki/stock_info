@@ -14,4 +14,6 @@ public interface IMaterielService {
 	public void editMateriel(Materiel materiel);
 	
 	public Materiel getMaterielById(int idMateriel);
+
+	public void editMaterielQuantiteStock(int idMateriel, int newQuantite);
 }

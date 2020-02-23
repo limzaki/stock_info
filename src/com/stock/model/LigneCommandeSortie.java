@@ -1,37 +1,60 @@
 package com.stock.model;
 
-import java.util.List;
-
 public class LigneCommandeSortie {
 	
 	private int idLigneCommandeSortie;
-	private int idCommandeSortie;
+	private CommandeSortie commandeSortie;
+	private Materiel materiel;
 	private int quantite;
-	private List<LigneCommandeSortie> lignesCommandeSortie;
+
+	public LigneCommandeSortie(int idLigneCommandeSortie, CommandeSortie commandeSortie, Materiel materiel,
+			int quantite) {
+		super();
+		this.idLigneCommandeSortie = idLigneCommandeSortie;
+		this.commandeSortie = commandeSortie;
+		this.materiel = materiel;
+		this.quantite = quantite;
+	}
 	
+	public LigneCommandeSortie(CommandeSortie commandeSortie, Materiel materiel,
+			int quantite) {
+		super();
+		this.commandeSortie = commandeSortie;
+		this.materiel = materiel;
+		this.quantite = quantite;
+	}
+
 	public int getIdLigneCommandeSortie() {
 		return idLigneCommandeSortie;
 	}
+
 	public void setIdLigneCommandeSortie(int idLigneCommandeSortie) {
 		this.idLigneCommandeSortie = idLigneCommandeSortie;
 	}
-	public int getIdCommandeSortie() {
-		return idCommandeSortie;
+
+	public CommandeSortie getCommandeSortie() {
+		return commandeSortie;
 	}
-	public void setIdCommandeSortie(int idCommandeSortie) {
-		this.idCommandeSortie = idCommandeSortie;
+
+	public void setCommandeSortie(CommandeSortie commandeSortie) {
+		this.commandeSortie = commandeSortie;
 	}
+
+	public Materiel getMateriel() {
+		return materiel;
+	}
+
+	public void setMateriel(Materiel materiel) {
+		this.materiel = materiel;
+	}
+
 	public int getQuantite() {
 		return quantite;
 	}
+
 	public void setQuantite(int quantite) {
 		this.quantite = quantite;
 	}
-	public List<LigneCommandeSortie> getLignesCommandeSortie() {
-		return lignesCommandeSortie;
-	}
-	public void setLignesCommandeSortie(List<LigneCommandeSortie> lignesCommandeSortie) {
-		this.lignesCommandeSortie = lignesCommandeSortie;
-	}
+	
 	
 }

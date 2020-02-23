@@ -19,6 +19,7 @@ import com.stock.service.impl.MaterielService;
 @WebServlet("/MaterielServlet")
 public class MaterielServlet extends HttpServlet {
 
+	private static final long serialVersionUID = 1L;
 	private static final String MATERIEL_SERVLET_ACTION_GET = "/MaterielServlet?action=get";
 	private static final String MATERIEL_PAGE = "materiel/materiel.jsp";
 	private static final String MATERIEL_FORM = "materiel/materielForm.jsp";
@@ -26,7 +27,7 @@ public class MaterielServlet extends HttpServlet {
 	private IMaterielService materielService;
 
 	private ICategorieService categorieService;
-	
+
 	@Override
 	public void init() throws ServletException {
 		materielService = new MaterielService();
@@ -61,7 +62,7 @@ public class MaterielServlet extends HttpServlet {
 		request.setAttribute("categories", categorieService.getAllCategories());
 		dispatcher.forward(request, response);	
 	}
-	
+
 	private void displayEditMaterielForm(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		int idMateriel = Integer.parseInt(request.getParameter("id"));
 		Materiel existingMateriel = materielService.getMaterielById(idMateriel);
@@ -75,18 +76,18 @@ public class MaterielServlet extends HttpServlet {
 		int quantiteStock = Integer.parseInt(request.getParameter("quantiteStock"));
 		double prixUnitaire = Double.parseDouble(request.getParameter("prixUnitaire"));
 		int idCategorie = Integer.parseInt(request.getParameter("idCategorie"));
-		
+
 		materielService.addMateriel(new Materiel(categorieService.getCategorieById(idCategorie), nomMateriel, quantiteStock, prixUnitaire));
 		response.sendRedirect(request.getContextPath() + MATERIEL_SERVLET_ACTION_GET);
 	}
-	
+
 	private void editMateriel(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		int idMateriel = Integer.parseInt(request.getParameter("idMateriel"));
 		String nomMateriel = request.getParameter("nomMateriel");
 		int quantiteStock = Integer.parseInt(request.getParameter("quantiteStock"));
 		double prixUnitaire = Double.parseDouble(request.getParameter("prixUnitaire"));
 		int idCategorie = Integer.parseInt(request.getParameter("idCategorie"));
-		
+
 		materielService.editMateriel(new Materiel(idMateriel, categorieService.getCategorieById(idCategorie), nomMateriel, quantiteStock, prixUnitaire));
 		response.sendRedirect(request.getContextPath() + MATERIEL_SERVLET_ACTION_GET);
 	}

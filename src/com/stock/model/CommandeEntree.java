@@ -1,7 +1,6 @@
 package com.stock.model;
 
 import java.util.Date;
-import java.util.List;
 
 public class CommandeEntree {
 	
@@ -16,6 +15,10 @@ public class CommandeEntree {
 		this.fournisseur = fournisseur;
 		this.dateCommandeEntree = dateCommandeEntree;
 		this.montant = montant;
+	}
+	public CommandeEntree(Fournisseur fournisseur, Date dateCommandeEntree) {
+		this.fournisseur = fournisseur;
+		this.dateCommandeEntree = dateCommandeEntree;
 	}
 	public int getIdCommandeEntree() {
 		return idCommandeEntree;

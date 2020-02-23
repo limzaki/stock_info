@@ -26,18 +26,25 @@
 	<link rel="stylesheet" type="text/css" href="login/css/util.css">
 	<link rel="stylesheet" type="text/css" href="login/css/main.css">
 <!--===============================================================================================-->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
-
+	<header>
+      <nav class="navbar navbar-expand-md navbar-dark" style="background-color: tomato">
+          <div>
+               <a href="#" class="navbar-brand"> Gestion De Stock </a>
+          </div>
+      </nav>
+    </header>
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100 p-t-85 p-b-20">
 				<form action="/stock_info/LoginServlet" method="post" class="login100-form validate-form">
-					<span class="login100-form-title p-b-70">
-						Gestion Stock
+					<span class="login100-form-title p-b-70" style="color: #ddd">
+						
 					</span>
 					<span class="login100-form-avatar">
-						<img src="login/images/materiel-informatique.png" alt="MATERIEL">
+						<img src="login/image/admin.png" alt="">
 					</span>
 
 					<div class="wrap-input100 validate-input m-t-85 m-b-35" data-validate = "Enter username">
@@ -49,7 +56,7 @@
 						<input class="input100" type="password" name="pass">
 						<span class="focus-input100" data-placeholder="Password"></span>
 					</div>
-
+					<p style="color: red;">${error}</p>
 					<div class="container-login100-form-btn">
 						<button class="login100-form-btn">
 							Login

@@ -4,7 +4,7 @@
         <html>
 
         <head>
-            <title>CommandeEntree</title>
+            <title>Commande Entree</title>
             <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         </head>
 
@@ -23,12 +23,12 @@
                 <!-- <div class="alert alert-success" *ngIf='message'>{{message}}</div> -->
 
                 <div class="container">
-                    <h3 class="text-center">List Des CommandeEntrees</h3>
+                    <h3 class="text-center">List Des Commandes d'Entrée</h3>
                     <hr>
                     <div class="container text-left">
 
                         <a href="<%=request.getContextPath()%>/CommandeEntreeServlet?action=new" class="btn btn-success">Ajouter
-     Nouveau CommandeEntree</a>
+     Nouvelle Commande Entree</a>
                     </div>
                     <br>
                     <table class="table table-bordered">
@@ -56,7 +56,7 @@
                                     <td>
                                         <c:out value="${commandeEntree.fournisseur.nom}" />
                                     </td>
-                                    <td><a href="CommandeEntreeServlet?action=modify&id=<c:out value='${commandeEntree.idCommandeEntree}' />">Modifier</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="<%=request.getContextPath()%>/CommandeEntreeServlet?action=delete&id=<c:out value='${commandeEntree.idCommandeEntree}' />">Supprimer</a></td>
+                                    <td><a href="LigneCommandeEntreeServlet?action=list&id=<c:out value='${commandeEntree.idCommandeEntree}' />">Details</a></td>
                                 </tr>
                             </c:forEach>
                         </tbody>

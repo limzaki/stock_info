@@ -16,4 +16,6 @@ public interface IMaterielDAO {
 
 	public Materiel selectMaterielById(int idMateriel);
 
+	public void updateMaterielQuantiteStock(int idMateriel, int newQuantite);
+
 }

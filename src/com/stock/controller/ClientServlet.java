@@ -17,6 +17,7 @@ import com.stock.service.impl.ClientService;
 @WebServlet("/ClientServlet")
 public class ClientServlet extends HttpServlet {
 
+	private static final long serialVersionUID = 1L;
 	private static final String CLIENT_SERVLET_ACTION_GET = "/ClientServlet?action=get";
 	private static final String CLIENT_PAGE = "client/client.jsp";
 	private static final String CLIENT_FORM = "client/clientForm.jsp";
@@ -55,7 +56,7 @@ public class ClientServlet extends HttpServlet {
 		RequestDispatcher dispatcher = request.getRequestDispatcher(CLIENT_FORM);
 		dispatcher.forward(request, response);	
 	}
-	
+
 	private void displayEditClientForm(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		int idClient = Integer.parseInt(request.getParameter("id"));
 		Client existingClient = clientService.getClientById(idClient);
@@ -71,7 +72,7 @@ public class ClientServlet extends HttpServlet {
 		clientService.addClient(new Client(nomComplet, telephone, email));
 		response.sendRedirect(request.getContextPath() + CLIENT_SERVLET_ACTION_GET);
 	}
-	
+
 	private void editClient(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		int idClient = Integer.parseInt(request.getParameter("id"));
 		String nomComplet = request.getParameter("nom");

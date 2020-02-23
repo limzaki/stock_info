@@ -20,6 +20,10 @@ public class Client {
 		this.telephone = telephone;
 		this.email = email;
 	}
+	public Client(int idClient) {
+		super();
+		this.idClient = idClient;
+	}
 	public int getIdClient() {
 		return idClient;
 	}

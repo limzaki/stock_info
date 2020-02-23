@@ -9,5 +9,9 @@ public interface ICommandeEntreeService {
 	List<CommandeEntree> getAllCommandeEntrees();
 
 	void addCommandeEntree(CommandeEntree commandeEntree);
-	
+
+	void setCommandeEntreeMontant(int commandeEntreeId, double montant);
+
+	CommandeEntree getLastCommandeEntree();
+
 }

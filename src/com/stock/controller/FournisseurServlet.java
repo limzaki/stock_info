@@ -17,6 +17,7 @@ import com.stock.service.impl.FournisseurService;
 @WebServlet("/FournisseurServlet")
 public class FournisseurServlet extends HttpServlet {
 
+	private static final long serialVersionUID = 1L;
 	private static final String FOURNISSEUR_SERVLET_ACTION_GET = "/FournisseurServlet?action=get";
 	private static final String FOURNISSEUR_PAGE = "fournisseur/fournisseur.jsp";
 	private static final String FOURNISSEUR_FORM = "fournisseur/fournisseurForm.jsp";

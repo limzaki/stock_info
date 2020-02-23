@@ -17,6 +17,7 @@ import com.stock.service.impl.CategorieService;
 @WebServlet("/CategorieServlet")
 public class CategorieServlet extends HttpServlet {
 
+	private static final long serialVersionUID = 1L;
 	private static final String CATEGORIE_SERVLET_ACTION_GET = "/CategorieServlet?action=get";
 	private static final String CATEGORIE_PAGE = "categorie/categorie.jsp";
 	private static final String CATEGORIE_FORM = "categorie/categorieForm.jsp";
@@ -55,7 +56,7 @@ public class CategorieServlet extends HttpServlet {
 		RequestDispatcher dispatcher = request.getRequestDispatcher(CATEGORIE_FORM);
 		dispatcher.forward(request, response);	
 	}
-	
+
 	private void displayEditCategorieForm(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		int idCategorie = Integer.parseInt(request.getParameter("id"));
 		Categorie existingCategorie = categorieService.getCategorieById(idCategorie);
@@ -69,7 +70,7 @@ public class CategorieServlet extends HttpServlet {
 		categorieService.addCategorie(new Categorie(designation));
 		response.sendRedirect(request.getContextPath() + CATEGORIE_SERVLET_ACTION_GET);
 	}
-	
+
 	private void editCategorie(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		int idCategorie = Integer.parseInt(request.getParameter("idCategorie"));
 		String designation = request.getParameter("designation");
